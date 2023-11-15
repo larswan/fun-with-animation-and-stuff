@@ -5,19 +5,29 @@ import { Button, Flex } from 'antd';
 
 
 const AnimeTest = () => {
-    const animationRef = useRef(null);
+    const mouthAnimationRef = useRef(null);
+    const eyeAnimationRef = useRef(null)
+    
     useEffect(() => {
-        animationRef.current = anime({
-            targets: '.eye',
-            scaleY: {
-                value: '*=.15',
-                direction: 'alternate',
-                duration: 800,
-                autoplay: true,
-                easing: 'cubicBezier(0, 0, .5, .5)',
-            },
+        mouthAnimationRef.current = anime({
+            targets: '.mouth',
+            scaleY: '*=8',
+            scaleX: '*=.6',
+            borderRadius: "100%",
             direction: 'alternate',
+            duration: 700,
+            autoplay: false,
+            easing: 'cubicBezier(0.5, 0.740, 0.585, 1)',
+        })
 
+        eyeAnimationRef.current = anime({
+            targets: '.eye',
+            scaleY: '*= .2',
+            borderRadius: '10%',
+            direction: 'alternate',
+            duration: '120',
+            autoplay: 'true',
+            easing: 'easeInOutSine'
         })
     }, []);
 
@@ -35,8 +45,8 @@ const AnimeTest = () => {
                 <div className="circle mouth">
                 </div>
             </div>
-            <Button onClick={() => animationRef.current.restart()}>Restart</Button>
-
+            <Button onClick={()=>eyeAnimationRef.current.restart()}>Eyes</Button>
+            <Button onClick={() => mouthAnimationRef.current.restart()}>Mouth</Button>
         </div>
     )
 }
