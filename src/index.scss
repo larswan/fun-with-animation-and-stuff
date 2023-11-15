@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    overflow: hidden;
 }
 
 h1 {
@@ -16,7 +17,6 @@ h1 {
 .window {
     width: 100vw;
     height: 100vh;
-    ;
     display: flex;
     justify-content: center;
     align-items: center;

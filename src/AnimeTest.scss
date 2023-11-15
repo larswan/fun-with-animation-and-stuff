@@ -1,0 +1,57 @@
+@import 'variables';
+
+.animeContainer {
+    margin: 20px;
+    display: flex;
+    height:auto;
+    flex-direction: column;
+}
+
+.circle {
+    background-color: rgb(0, 0, 0);
+    width: .15 * $faceSize;
+    height: .15 * $faceSize;
+    margin: 5px;
+    border-radius: 100%;
+}
+
+.face{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;;
+    background-color: yellow;
+    width: $faceSize;
+    height: $faceSize;
+    border-radius: 100%;
+    margin-bottom: 2em;
+    border: .03 * $faceSize solid black;
+    
+    .eyeLine {
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        align-items: center;
+        gap: .02 * $faceSize;
+
+        .eye {
+                // height: .05 * $faceSize;
+            }
+    }
+
+    .mouth {
+        height: .03 * $faceSize;
+        width: .40 * $faceSize;
+        border-radius: 20%;
+        position: relative;
+        top: .1 * $faceSize;
+
+    }
+}
+
+
+
+
+
+
+

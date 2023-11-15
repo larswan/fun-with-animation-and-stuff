@@ -12,9 +12,11 @@ function App() {
   }
   
   return (
-    <div className='window' onMouseMove={handleMouseMove} >
+    <div className='window'>
+      <div onMouseMove={handleMouseMove}>
+        <GradientMouseTracker mouseX={mouseX} mouseY={mouseY}/>
+      </div>
       <AnimeTest />
-      <GradientMouseTracker mouseX={mouseX} mouseY={mouseY}/>
     </div>
   );
 }
