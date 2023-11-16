@@ -15,18 +15,18 @@ const AnimeTest = () => {
             scaleX: '*=.6',
             borderRadius: "100%",
             direction: 'alternate',
-            duration: 700,
+            duration: 400,
             autoplay: false,
             easing: 'cubicBezier(0.5, 0.740, 0.585, 1)',
         })
 
         eyeAnimationRef.current = anime({
             targets: '.eye',
-            scaleY: '*= .2',
+            scaleY: '*= .1',
             borderRadius: '10%',
             direction: 'alternate',
             duration: '120',
-            autoplay: 'true',
+            autoplay: 'false',
             easing: 'easeInOutSine'
         })
     }, []);
@@ -45,8 +45,8 @@ const AnimeTest = () => {
                 <div className="circle mouth">
                 </div>
             </div>
-            <Button onClick={()=>eyeAnimationRef.current.restart()}>Eyes</Button>
-            <Button onClick={() => mouthAnimationRef.current.restart()}>Mouth</Button>
+            <Button onClick={()=>eyeAnimationRef.current.restart()}>Blink</Button>
+            <Button onClick={() => mouthAnimationRef.current.restart()}>Marvel</Button>
         </div>
     )
 }

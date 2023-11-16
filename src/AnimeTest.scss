@@ -10,7 +10,7 @@
 .circle {
     background-color: rgb(0, 0, 0);
     width: .15 * $faceSize;
-    height: .15 * $faceSize;
+    // height: .15 * $faceSize;
     margin: 5px;
     border-radius: 100%;
 }
@@ -33,6 +33,10 @@
         justify-items: center;
         align-items: center;
         gap: .02 * $faceSize;
+
+        .eye {
+            height: .3 * $faceSize
+        }
     }
 
     .mouth {
