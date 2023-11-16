@@ -5,7 +5,6 @@
 
 body {
     margin: 0;
-    overflow: hidden;
 }
 
 h1 {
@@ -20,15 +19,45 @@ hr {
     width: 100%;
 }
 
-.window {
-    width: 100vw;
+.container {
+    display: grid;
     height: 100vh;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 0.5fr 2fr 2fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header header header"
+        "vert1 middle vert2"
+        "vert1 middle vert2"
+        "foot foot foot";
 }
 
-.button:hover {
-    text-shadow: 0 0 2px white;
-    color: white;
+.container > *{
+    display: flex;
+    padding: 1em;
+}
+
+.header {
+    grid-area: header;
+    background-color: rgb(63, 63, 63);
+}
+
+.vert1 {
+    grid-area: vert1;
+    background-color: rgb(179, 222, 208);
+}
+
+.middle {
+    grid-area: middle;
+}
+
+.vert2 {
+    grid-area: vert2;
+    background-color: orange;
+}
+
+.foot {
+    grid-area: foot;
+    background-color: rgb(185, 50, 50);
 }

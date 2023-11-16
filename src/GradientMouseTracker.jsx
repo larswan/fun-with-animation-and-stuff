@@ -34,12 +34,14 @@ function GradientMouseTracker({mouseX, mouseY}) {
     },[mouseY])
 
     const gradient = {
-        width: '20vw',
-        height: '20vh',
+        width: '100%',
+        height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: 'start',
+        justifyContent: 'end',
+        borderRadius: '8px',
+        paddingLeft: '1em',
         backgroundImage: `linear-gradient(${angle}deg, #${xColor}, #FFFFFF)`
     }
 

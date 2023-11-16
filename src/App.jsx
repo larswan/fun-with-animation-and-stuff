@@ -13,13 +13,34 @@ function App() {
   }
   
   return (
-    <div className='window'>
-      <div onMouseMove={handleMouseMove}>
-        <GradientMouseTracker mouseX={mouseX} mouseY={mouseY}/>
+
+    <div class="container">
+
+      <div class="header">
+        <h1>HEAD</h1>
       </div>
-      <AnimeTest />
-      <BouncingBall />
+
+      <div class="vert1">
+        <AnimeTest />
+      </div>
+      
+      <div class="middle" onMouseMove={handleMouseMove}>
+          <GradientMouseTracker mouseX={mouseX} mouseY={mouseY}/>
+      </div>
+      
+      <div class="vert2">
+        <BouncingBall />
+      </div>
+
+      <div class="foot">
+        <h1>FOOT</h1>
+      </div>
     </div>
+      
+      
+      
+      
+    // </div>
   );
 }
 
