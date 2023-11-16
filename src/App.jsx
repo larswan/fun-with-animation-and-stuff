@@ -4,13 +4,9 @@ import AnimeTest from './AnimeTest';
 import BouncingBall from './BouncingBall';
 
 function App() {
-  const [mouseX, setMouseX] = useState(0)
-  const [mouseY, setMouseY] = useState(0)
 
-  const handleMouseMove = (e) => {
-    setMouseX(e.nativeEvent.offsetX);
-    setMouseY(e.nativeEvent.offsetY);
-  }
+
+
   
   return (
 
@@ -22,14 +18,14 @@ function App() {
 
       <div className="vert1">
         <AnimeTest />
+        <BouncingBall />
       </div>
       
-      <div className="middle" onMouseMove={handleMouseMove}>
-          <GradientMouseTracker mouseX={mouseX} mouseY={mouseY}/>
+      <div className="middle" >
+          <GradientMouseTracker/>
       </div>
       
       <div className="vert2">
-        <BouncingBall />
       </div>
 
       <div className="foot">

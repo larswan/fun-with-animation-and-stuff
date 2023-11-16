@@ -123,15 +123,9 @@ const BouncingBall = () => {
             <div className="ballWrapper">
                 <img src="src/assets/basketball-no-bg.png"className="ball"/>
             </div>
-            {/* <Button className="button" type="primary" onClick={()=>{
-                bounceAnimation.current.restart();
-                rotateAnimation.current.restart();
-                scaleAnimation.current.restart()
-                  }}>Bounce</Button> */}
             <button className="button" type="primary" onClick={()=>{
                 bounceAnimation.current.restart();
                 rotateAnimation.current.restart();
-                scaleAnimation.current.restart()
                   }}>Bounce</button>
         </div>
     )

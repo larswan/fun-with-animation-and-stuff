@@ -1,5 +1,4 @@
 import anime from "animejs"
-import "./AnimeTest.scss"
 import { useEffect, useRef } from "react"
 import { Button, Flex } from 'antd';
 
@@ -45,8 +44,12 @@ const AnimeTest = () => {
                 <div className="circle mouth">
                 </div>
             </div>
-            <button className="button" onClick={()=>eyeAnimationRef.current.restart()}>Blink</button>
-            <button className="button" onClick={() => mouthAnimationRef.current.restart()}>"Ooh"</button>
+            <div className="buttonContainer">
+                <button className="button" onClick={()=>eyeAnimationRef.current.restart()}>Blink</button>
+                <button className="button" onClick={() => mouthAnimationRef.current.restart()}>"Ooh"</button>
+                <button className="button">Smile</button>
+                <button className="button">Etc</button>
+            </div>
         </div>
     )
 }
