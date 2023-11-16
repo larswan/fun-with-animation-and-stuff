@@ -40,9 +40,9 @@ function GradientMouseTracker({mouseX, mouseY}) {
 
     return (
         <div className="gradientBox" style={gradient} >
-            <h1>{xColor}</h1>
-            <h1>{yColor}</h1>
-            <h1>{Math.floor(angle)}°</h1>
+            <h1>Angle: {Math.floor(angle)}°</h1>
+            <h1>X Color: {xColor}</h1>
+            <h1>Y Color: {yColor}</h1>
         </div>
     );
 }

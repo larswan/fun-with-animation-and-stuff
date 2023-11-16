@@ -41,8 +41,3 @@ export default function numberToHexColor(number) {
 
     return hexColor;
 }
-
-// Example usage
-const number = 600; // Replace with your desired number
-const hexColor = numberToHexColor(number);
-console.log(hexColor);

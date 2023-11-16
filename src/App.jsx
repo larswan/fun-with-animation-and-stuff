@@ -14,25 +14,25 @@ function App() {
   
   return (
 
-    <div class="container">
+    <div className="mainGrid">
 
-      <div class="header">
-        <h1>HEAD</h1>
+      <div className="header">
+        <h1>Random Animations</h1>
       </div>
 
-      <div class="vert1">
+      <div className="vert1">
         <AnimeTest />
       </div>
       
-      <div class="middle" onMouseMove={handleMouseMove}>
+      <div className="middle" onMouseMove={handleMouseMove}>
           <GradientMouseTracker mouseX={mouseX} mouseY={mouseY}/>
       </div>
       
-      <div class="vert2">
+      <div className="vert2">
         <BouncingBall />
       </div>
 
-      <div class="foot">
+      <div className="foot">
         <h1>FOOT</h1>
       </div>
     </div>
