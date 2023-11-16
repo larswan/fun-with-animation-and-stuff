@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import GradientMouseTracker from './GradientMouseTracker';
 import AnimeTest from './AnimeTest';
+import BouncingBall from './BouncingBall';
 
 function App() {
   const [mouseX, setMouseX] = useState(0)
@@ -17,6 +18,7 @@ function App() {
         <GradientMouseTracker mouseX={mouseX} mouseY={mouseY}/>
       </div>
       <AnimeTest />
+      <BouncingBall />
     </div>
   );
 }

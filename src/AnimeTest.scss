@@ -5,6 +5,8 @@
     display: flex;
     height:auto;
     flex-direction: column;
+    gap: 1em;
+    justify-content: baseline ;
 }
 
 .circle {
@@ -24,7 +26,6 @@
     width: $faceSize;
     height: $faceSize;
     border-radius: 100%;
-    margin-bottom: 2em;
     border: .03 * $faceSize solid black;
     
     .eyeLine {
@@ -49,7 +50,9 @@
     }
 }
 
-
+.ball {
+    font-size: 4em;
+}
 
 
 
