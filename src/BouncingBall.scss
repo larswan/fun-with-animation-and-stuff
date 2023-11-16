@@ -1,0 +1,12 @@
+.bouncingContainer {
+    margin: 20px;
+    height: 450px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    border: 1px solid grey;
+    border-radius: 5px;
+    gap: 1em;
+    padding: 10px;
+}

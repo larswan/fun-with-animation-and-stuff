@@ -22,3 +22,12 @@ h1 {
     align-items: center;
 }
 
+.button {
+    // background: rgb(43, 43, 43);
+    // color: white;
+}
+
+.button:hover {
+    text-shadow: 0 0 2px white;
+    color: white;
+}

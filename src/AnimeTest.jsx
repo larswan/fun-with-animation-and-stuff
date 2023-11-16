@@ -45,8 +45,8 @@ const AnimeTest = () => {
                 <div className="circle mouth">
                 </div>
             </div>
-            <Button onClick={()=>eyeAnimationRef.current.restart()}>Blink</Button>
-            <Button onClick={() => mouthAnimationRef.current.restart()}>"Ooh"</Button>
+            <Button className="button" onClick={()=>eyeAnimationRef.current.restart()}>Blink</Button>
+            <Button className="button" onClick={() => mouthAnimationRef.current.restart()}>"Ooh"</Button>
         </div>
     )
 }

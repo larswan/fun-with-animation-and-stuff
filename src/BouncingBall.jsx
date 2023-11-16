@@ -1,6 +1,7 @@
 import anime from "animejs";
 import { useEffect, useRef } from "react";
 import { Button } from "antd";
+import './BouncingBall.scss'
 
 const BouncingBall = () => {
     const bounceAnimation = useRef(null)
@@ -12,100 +13,116 @@ const BouncingBall = () => {
                 // UP 1
                 {
                     value: -300, 
-                    duration: 480, 
-                    direction: 'normal', 
+                    duration: 480,  
                     easing: 'cubicBezier(0.005, 0.650, 0.225, 1.000)',
                 },
                 {
                     value: 0, 
-                    duration: 460, 
-                    direction: 'normal', 
+                    duration: 460,  
                     easing: 'cubicBezier(0.725, 0.010, 0.960, 0.330)'
                 },
                 // UP 2
                 {
                     value: -200,
                     duration: 400,
-                    direction: 'normal',
                     easing: 'cubicBezier(0.005, 0.650, 0.225, 1.000)',
                 },
                 {
                     value: 0,
                     duration: 400,
-                    direction: 'normal',
                     easing: 'cubicBezier(0.725, 0.010, 0.960, 0.330)'
                 },
                 // UP 3
                 {
                     value: -100,
                     duration: 250,
-                    direction: 'normal',
                     easing: 'cubicBezier(0.005, 0.650, 0.225, 1.000)',
                 },
                 {
                     value: 0,
                     duration: 230,
-                    direction: 'normal',
                     easing: 'cubicBezier(0.725, 0.010, 0.960, 0.330)'
                 },
                 // UP 4
                 {
                     value: -45,
                     duration: 200,
-                    direction: 'normal',
                     easing: 'cubicBezier(0.005, 0.650, 0.225, 1.000)',
                 },
                 {
                     value: 0,
                     duration: 150,
-                    direction: 'normal',
                     easing: 'cubicBezier(0.725, 0.010, 0.960, 0.330)'
                 },
                 // UP 5
                 {
                     value: -20,
                     duration: 120,
-                    direction: 'normal',
                     easing: 'cubicBezier(0.005, 0.650, 0.225, 1.000)',
                 },
                 {
                     value: 0,
                     duration: 100,
-                    direction: 'normal',
                     easing: 'cubicBezier(0.725, 0.010, 0.960, 0.330)'
                 },
                 // UP 6
                 {
                     value: -5,
-                    duration: 120,
-                    direction: 'normal',
+                    duration: 80,
                     easing: 'cubicBezier(0.005, 0.650, 0.225, 1.000)',
                 },
                 {
                     value: 0,
-                    duration: 100,
-                    direction: 'normal',
+                    duration: 60,
                     easing: 'cubicBezier(0.725, 0.010, 0.960, 0.330)'
                 },
             ],
+            translateX: [
+                // UP 1
+                {
+                    value: 240,
+                    duration: 2930,
+                    easing: 'linear',
+                },
+                {
+                    value: 0,
+                    delay: 1000,
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                }
+            ],
+            rotate: [
+                {
+                    value: '280deg',
+                    duration: 2930,
+                    easing: 'linear',
+                },
+                {
+                    value: '-360deg',
+                    delay: 1000,
+                    duration: 1000,
+                    easing: 'easeInOutSine',
+                }
+            ],
             
             // scaleY: [
-            //     { value: [1.75, 1], duration: 500 },
-            //     { value: 2, duration: 50, delay: 1000, easing: 'easeOutExpo' },
-            //     { value: 1, duration: 450 },
-            //     { value: 1.75, duration: 50, delay: 1000, easing: 'easeOutExpo' },
-            //     { value: 1, duration: 450 }
-            // ],
-           
+                //     { value: [1.75, 1], duration: 500 },
+                //     { value: 2, duration: 50, delay: 1000, easing: 'easeOutExpo' },
+                //     { value: 1, duration: 450 },
+                //     { value: 1.75, duration: 50, delay: 1000, easing: 'easeOutExpo' },
+                //     { value: 1, duration: 450 }
+                // ],
+                
+            direction: 'normal',
             loop: false,
             autoplay: false,
         });
     },[])
 
     return(
-        <div className="animeContainer">
-            <div className="ball">🏀</div>
-            <Button onClick={()=>bounceAnimation.current.restart()}>Bounce</Button>
+        <div className="bouncingContainer">
+            <img src="src/assets/basketball-no-bg.png"className="ball"/>
+            <Button className="button" type="primary" onClick={()=>bounceAnimation.current.restart()}>Bounce</Button>
         </div>
     )
 }
