@@ -14,17 +14,18 @@ h1 {
     color: rgb(255, 255, 255)
 }
 
+hr {
+    border: .5px solid rgba(128, 128, 128, 0.551);
+    padding-top: 0px;
+    width: 100%;
+}
+
 .window {
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
-}
-
-.button {
-    // background: rgb(43, 43, 43);
-    // color: white;
 }
 
 .button:hover {

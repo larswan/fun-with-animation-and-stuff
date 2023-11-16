@@ -4,11 +4,13 @@ import { Button } from "antd";
 import './BouncingBall.scss'
 
 const BouncingBall = () => {
+    const rotateAnimation = useRef(null)
     const bounceAnimation = useRef(null)
+    const scaleAnimation = useRef(null)
 
     useEffect(()=>{
         bounceAnimation.current = anime({
-            targets: '.ball',
+            targets: '.ballWrapper',
             translateY: [
                 // UP 1
                 {
@@ -91,9 +93,16 @@ const BouncingBall = () => {
                     duration: 1000,
                 }
             ],
+            direction: 'normal',
+            loop: false,
+            autoplay: false,
+            
+        });
+        rotateAnimation.current = anime({
+            targets: ".ball",
             rotate: [
                 {
-                    value: '280deg',
+                    value: '150deg',
                     duration: 2930,
                     easing: 'linear',
                 },
@@ -104,25 +113,23 @@ const BouncingBall = () => {
                     easing: 'easeInOutSine',
                 }
             ],
-            
-            // scaleY: [
-                //     { value: [1.75, 1], duration: 500 },
-                //     { value: 2, duration: 50, delay: 1000, easing: 'easeOutExpo' },
-                //     { value: 1, duration: 450 },
-                //     { value: 1.75, duration: 50, delay: 1000, easing: 'easeOutExpo' },
-                //     { value: 1, duration: 450 }
-                // ],
-                
             direction: 'normal',
             loop: false,
             autoplay: false,
-        });
+        })
     },[])
 
     return(
         <div className="bouncingContainer">
-            <img src="src/assets/basketball-no-bg.png"className="ball"/>
-            <Button className="button" type="primary" onClick={()=>bounceAnimation.current.restart()}>Bounce</Button>
+            <div className="ballWrapper">
+                <img src="src/assets/basketball-no-bg.png"className="ball"/>
+            </div>
+            <hr></hr>
+            <Button className="button" type="primary" onClick={()=>{
+                bounceAnimation.current.restart();
+                rotateAnimation.current.restart();
+                scaleAnimation.current.restart()
+                  }}>Bounce</Button>
         </div>
     )
 }
