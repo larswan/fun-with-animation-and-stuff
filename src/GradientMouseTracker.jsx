@@ -1,53 +1,44 @@
 import { useState, useEffect } from "react"
+import numberToHexColor from './numberToHexColor'
 
-function GradientMouseTracker({mouseX, mouseY}) {
-    const [angle, setAngle] = useState(90)
-    const [xCount, setXCount] = useState(0)
-    const [yCount, setYCount] = useState(0)
+function GradientMouseTracker() {
+    const [angle, setAngle] = useState(34)
     const [xColor, setXColor] = useState(1749)
-    // const [yColor, setYColor] = useState(0)
+    const [yColor, setYColor] = useState(111111)
+    const [mouseY, setMouseY] = useState(30)
+    const [mouseX, setMouseX] = useState(250)
 
-    // Only change every 10 pixels so it isn't so jarring
+    const [frozen, setFrozen] =useState(false)
+
+
+    const handleMouseMove = (e) => {
+        setMouseX(e.nativeEvent.offsetX);
+        setMouseY(e.nativeEvent.offsetY);
+    }
+    
     useEffect(()=>{
-        setAngle((mouseX * mouseY)/10000)
-        setXColor(mouseX);
-
-        // to do fewer rerenders
-        // if(xCount<10){
-        //     setXCount((prev)=> prev + 1)
-        // }
-        // else{
-        //     setXCount(0)
-        // }
+        if(!frozen){
+            setAngle(mouseY);
+            setXColor(numberToHexColor(mouseX));
+        }
     },[mouseX])
     
     useEffect(()=>{
-        setAngle((mouseX * mouseY)/10000)
-        
-        if(yCount<10){
-            setYCount((prev)=> prev + 1)
-        }
-        else{
-            // setYColor(mouseY); 
-            setYCount(0)
+        if(!frozen){
+            setYColor(numberToHexColor(mouseY))        
         }
     },[mouseY])
 
     const gradient = {
-        width: '20vw',
-        height: '20vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundImage: `linear-gradient(${angle}deg, #${xColor}, #FFFFFF)`
+        backgroundImage: `linear-gradient(${angle}deg, ${xColor}, ${yColor})`
     }
 
     return (
-        <div className="gradient" style={gradient} >
-            <h1>#{xColor}</h1>
-            {/* <h1>#{yColor}</h1> */}
-            <h1>{Math.floor(angle)}°</h1>
+        <div className="gradientBox" style={gradient} onMouseMove={handleMouseMove} onClick={()=>setFrozen(prev=>!prev)}>
+                    <h1>{frozen ? "Click to unfreeze" : "Click to freeze"}</h1>
+                    <h1>Angle: {Math.floor(angle)}°</h1>
+                    <h1>X Color: {xColor}</h1>
+                    <h1>Y Color: {yColor}</h1> 
         </div>
     );
 }

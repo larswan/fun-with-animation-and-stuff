@@ -4,22 +4,39 @@ import AnimeTest from './AnimeTest';
 import BouncingBall from './BouncingBall';
 
 function App() {
-  const [mouseX, setMouseX] = useState(0)
-  const [mouseY, setMouseY] = useState(0)
 
-  const handleMouseMove = (e) => {
-    setMouseX(e.nativeEvent.offsetX);
-    setMouseY(e.nativeEvent.offsetY);
-  }
+
+
   
   return (
-    <div className='window'>
-      <div onMouseMove={handleMouseMove}>
-        <GradientMouseTracker mouseX={mouseX} mouseY={mouseY}/>
+
+    <div className="mainGrid">
+
+      <div className="header">
+        <h1>Random Animations</h1>
       </div>
-      <AnimeTest />
-      <BouncingBall />
+
+      <div className="vert1">
+        <AnimeTest />
+        <BouncingBall />
+      </div>
+      
+      <div className="middle" >
+          <GradientMouseTracker/>
+      </div>
+      
+      <div className="vert2">
+      </div>
+
+      <div className="foot">
+        <h1>FOOT</h1>
+      </div>
     </div>
+      
+      
+      
+      
+    // </div>
   );
 }
 

@@ -1,7 +1,6 @@
 import anime from "animejs";
 import { useEffect, useRef } from "react";
 import { Button } from "antd";
-import './BouncingBall.scss'
 
 const BouncingBall = () => {
     const rotateAnimation = useRef(null)
@@ -88,7 +87,7 @@ const BouncingBall = () => {
                 },
                 {
                     value: 0,
-                    delay: 1000,
+                    delay: 500,
                     easing: 'easeInOutSine',
                     duration: 1000,
                 }
@@ -108,7 +107,7 @@ const BouncingBall = () => {
                 },
                 {
                     value: '-360deg',
-                    delay: 1000,
+                    delay: 500,
                     duration: 1000,
                     easing: 'easeInOutSine',
                 }
@@ -124,12 +123,10 @@ const BouncingBall = () => {
             <div className="ballWrapper">
                 <img src="src/assets/basketball-no-bg.png"className="ball"/>
             </div>
-            <hr></hr>
-            <Button className="button" type="primary" onClick={()=>{
+            <button className="button" type="primary" onClick={()=>{
                 bounceAnimation.current.restart();
                 rotateAnimation.current.restart();
-                scaleAnimation.current.restart()
-                  }}>Bounce</Button>
+                  }}>Bounce</button>
         </div>
     )
 }
